@@ -7,8 +7,8 @@ import Appointment from '../models/Appointment';
 // @access  Private/Admin
 export const getDashboardStats = async (req: Request, res: Response) => {
   try {
-    const totalDoctors = await User.countDocuments({ role: 'Doctor' });
-    const totalPatients = await User.countDocuments({ role: 'Patient' });
+    const totalDoctors = await User.countDocuments({ role: 'Doctor' } as any);
+    const totalPatients = await User.countDocuments({ role: 'Patient' } as any);
     const pendingAppointments = await Appointment.countDocuments({ status: 'Pending' });
     const totalAppointments = await Appointment.countDocuments();
 

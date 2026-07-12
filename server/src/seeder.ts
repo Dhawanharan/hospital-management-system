@@ -23,7 +23,7 @@ const seedAdmin = async () => {
       name: 'System Admin',
       email: 'admin@hms.com',
       password: hashedPassword,
-      role: 'Admin',
+      role: 'Admin' as any,
     });
 
     console.log('Admin user seeded successfully!');
